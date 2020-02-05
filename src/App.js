@@ -7,14 +7,14 @@ import Answer from './components/Answer';
 function App() {
   return (
     <div className="App container-fluid">
-        <div className='row'>
-          <div className='col-md-4'>
+        <div className='row align-items-center'>
+          <div className='col-md-3'>
             <Form />
           </div>
-          <div className='col-md-4'>
+          <div className='col-md-6'>
             <Button />
           </div>
-          <div className='col-md-4'>
+          <div className='col-md-3'>
             <Answer />
           </div>
         </div>
