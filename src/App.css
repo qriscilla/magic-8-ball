@@ -1,0 +1,15 @@
+body {
+  background-color: #75c9be;
+}
+
+.row {
+  height: 100vh;
+}
+
+.col-md-4 {
+  border: 2px solid red;
+}
+
+/* .App {
+  text-align: center;
+} */
