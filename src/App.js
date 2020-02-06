@@ -1,23 +1,26 @@
 import React from 'react';
 import './App.css';
 import Form from './components/Form';
-import Button from './components/Button';
+import Chat from './components/Chat';
 import Answer from './components/Answer';
 
 function App() {
   return (
-    <div className="App container-fluid">
-        <div className='row align-items-center'>
-          <div className='col-md-3'>
-            <Form />
+    <div>
+      <header>Magic 8 Ball</header>
+      <div className="container-fluid">
+        <div className='row'>
+          <div className='col-md-6'>
+            <Chat />
           </div>
           <div className='col-md-6'>
-            <Button />
-          </div>
-          <div className='col-md-3'>
             <Answer />
           </div>
         </div>
+        <div className='row'>
+          <Form />
+        </div>
+      </div>
     </div>
   );
 }
