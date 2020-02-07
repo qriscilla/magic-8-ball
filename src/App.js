@@ -11,7 +11,7 @@ class App extends React.Component {
         id: 1,
         author: 'eightBall',
         image: EightBall,
-        content: 'Ask me your deepest, darkest questions',
+        content: 'Ask me your deepest, darkest questions.',
       }
     ]
   }
