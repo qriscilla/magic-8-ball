@@ -17,20 +17,6 @@ class Message extends Component {
         }
     }
 
-    who = () => {
-        if(this.props.message.author === 'eightBall') {
-            return {
-                backgroundColor: 'rgb(85, 57, 82)',
-                color: 'white'
-            }
-        } else {
-            return {
-                backgroundColor: 'rgb(85, 57, 82)',
-                color: 'white'
-            }
-        }
-    }
-
     render() {
         return (
             <div>
@@ -44,7 +30,7 @@ class Message extends Component {
                                 }  
                             </td>
                             <td style={this.align()}>
-                                <p className='message-content' style={this.who()}>{this.props.message.content}</p>
+                                <p className='message-content'>{this.props.message.content}</p>
                             </td>
                         </tr>
                     </thead>

@@ -50,28 +50,44 @@ class Form extends React.Component {
     render() {
         const isEnabled = this.state.ask.length > 0;
         return (
-            <div className='container-fluid'>
-                <form onSubmit={this.asked}>
-                    <div className='row'>
-                        <div className='col-sm-11'>
-                            <input 
-                                name='ask' 
-                                type='text' 
-                                placeholder='Dear Magic 8 Ball,' 
-                                value={this.state.ask}
-                                onChange={this.typing}
-                            ></input>
-                        </div>
-                        <div className='col-sm-1'>
-                            <button
-                                type='submit'
-                                value='Submit'
-                                disabled={!isEnabled}
-                            >Ask</button>                    
-                        </div>                            
-                    </div>
-                </form>
-            </div>                  
+            <form onSubmit={this.asked} style={{display:'flex'}}>
+                <input 
+                    name='ask' 
+                    type='text' 
+                    placeholder='Dear Magic 8 Ball,' 
+                    value={this.state.ask}
+                    onChange={this.typing}
+                    style={{flex:'10'}}
+                ></input>
+                <button
+                    type='submit'
+                    value='Submit'
+                    disabled={!isEnabled}
+                    style={{flex:'1'}}
+                    >Ask</button>                    
+            </form>
+            // <div className='container-fluid'>
+            //     <form onSubmit={this.asked}>
+            //         <div className='row'>
+            //             <div className='col-sm-11'>
+            //                 <input 
+            //                     name='ask' 
+            //                     type='text' 
+            //                     placeholder='Dear Magic 8 Ball,' 
+            //                     value={this.state.ask}
+            //                     onChange={this.typing}
+            //                 ></input>
+            //             </div>
+            //             <div className='col-sm-1'>
+            //                 <button
+            //                     type='submit'
+            //                     value='Submit'
+            //                     disabled={!isEnabled}
+            //                 >Ask</button>                    
+            //             </div>                            
+            //         </div>
+            //     </form>
+            // </div>                  
         );
     }
 }

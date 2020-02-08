@@ -37,15 +37,13 @@ class App extends React.Component {
     console.log(this.state.messages)
     return (
       <div>
-        <header>Magic 8 Ball</header>
-        <div className="container-fluid">
-          <div className='row'>
+        <header><div className='header'>MAGIC 8 BALL</div></header>
+        <div className="container">
+          <div className='row fixed-bottom'>
             <div className='col-md-12'>
               <Messages messages={this.state.messages} />
+              <Form form={this.form} />
             </div>
-          </div>
-          <div className='row'>
-            <Form form={this.form} />
           </div>
         </div>
       </div>       
