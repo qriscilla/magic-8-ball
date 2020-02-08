@@ -18,13 +18,13 @@ class Message extends Component {
     who = () => {
         if(this.props.message.author === 'eightBall') {
             return {
-                backgroundColor: 'rgb(155, 194, 191)',
+                backgroundColor: 'rgb(85, 57, 82)',
                 color: 'white'
             }
         } else {
             return {
-                backgroundColor: 'rgb(235, 199, 185)',
-                color: 'rgb(210, 142, 113)'
+                backgroundColor: 'rgb(85, 57, 82)',
+                color: 'white'
             }
         }
     }

@@ -6,12 +6,11 @@ class Form extends React.Component {
         answer: ''
     }
 
-    onSubmit = (e) => {
-        e.preventDefault();
+    typing = (e) => {
+        // picking up input value
+        this.setState({[e.target.name]: e.target.value});  
         
-        this.props.form(this.state.ask);
-        this.setState({ask:''});
-
+        // randomizing answer and updating answer state
         const responses = [
             "Don't count on it",
             "My reply is no",
@@ -35,20 +34,23 @@ class Form extends React.Component {
             "Concentrate and ask again"             
         ]
         const random = responses[Math.floor(Math.random()*responses.length)];
-        this.props.form(this.state.answer);
         this.setState({answer:random});
+    }     
+
+    asked = (e) => {
+        e.preventDefault();
+
+        // updating ask state
+        this.setState({ask:''});
+
+        // pushing states to App.js
+        this.props.form(this.state.ask, this.state.answer);
     }
-
-    // onChange = (e) => this.setState({[e.target.name]: e.target.value});
-
-    onChange = (e) => {
-        this.setState({[e.target.name]: e.target.value});
-    } 
 
     render() {
         return (
             <div className='container-fluid'>
-                <form onSubmit={this.onSubmit}>
+                <form onSubmit={this.asked}>
                     <div className='row'>
                         <div className='col-sm-11'>
                             <input 
@@ -56,7 +58,7 @@ class Form extends React.Component {
                                 type='text' 
                                 placeholder='Dear Magic 8 Ball,' 
                                 value={this.state.ask}
-                                onChange={this.onChange}
+                                onChange={this.typing}
                             ></input>
                         </div>
                         <div className='col-sm-1'>
