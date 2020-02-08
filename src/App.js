@@ -3,12 +3,13 @@ import './App.css';
 import Form from './components/Form';
 import Messages from './components/Messages';
 import EightBall from './EightBall.png';
+import uuid from "uuid";
 
 class App extends React.Component {
   state = {
     messages: [
       {
-        id: 1,
+        id: uuid.v4(),
         author: 'eightBall',
         image: EightBall,
         content: 'Ask me your deepest, darkest questions.',
@@ -16,12 +17,18 @@ class App extends React.Component {
     ]
   }
 
-  form = (ask) => {
+  form = (ask, answer) => {
     const newMessage = {
-      id: 4,
+      id: uuid.v4(),
       author: 'visitor',
       image: EightBall,
       content: ask
+    }
+    const newAnswer = {
+      id: uuid.v4(),
+      author: 'eightBall',
+      image: EightBall,
+      content: answer
     }
     this.setState({messages: [...this.state.messages, newMessage] });
   }
