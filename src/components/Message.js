@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import EightBall from '../EightBall.png';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 
 class Message extends Component {
     align = () => {
@@ -36,7 +38,10 @@ class Message extends Component {
                     <thead>
                         <tr>
                             <td style={this.align()}>
-                                <img src={EightBall} alt={EightBall}></img>
+                                { this.props.message.author === 'eightBall'
+                                    ? (<img src={EightBall} alt={EightBall}></img>)
+                                    : (<FontAwesomeIcon className='fontIcon' icon={faUserCircle} size='3x' />)
+                                }  
                             </td>
                             <td style={this.align()}>
                                 <p className='message-content' style={this.who()}>{this.props.message.content}</p>

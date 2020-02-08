@@ -48,6 +48,7 @@ class Form extends React.Component {
     }
 
     render() {
+        const isEnabled = this.state.ask.length > 0;
         return (
             <div className='container-fluid'>
                 <form onSubmit={this.asked}>
@@ -62,9 +63,10 @@ class Form extends React.Component {
                             ></input>
                         </div>
                         <div className='col-sm-1'>
-                            <button 
+                            <button
                                 type='submit'
                                 value='Submit'
+                                disabled={!isEnabled}
                             >Ask</button>                    
                         </div>                            
                     </div>

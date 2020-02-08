@@ -3,8 +3,6 @@ import './App.css';
 import Form from './components/Form';
 import Messages from './components/Messages';
 import EightBall from './EightBall.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import uuid from "uuid";
 
 class App extends React.Component {
@@ -24,14 +22,12 @@ class App extends React.Component {
       {
         id: uuid.v4(),
         author: 'visitor',
-        image: <FontAwesomeIcon className='fontIcon' icon={faSearch} />,
         content: ask
       }
     const newAnswer =
       {
         id: uuid.v4(),
         author: 'eightBall',
-        image: EightBall,
         content: answer
       }
     this.setState({messages: [...this.state.messages, newMessage, newAnswer] });
