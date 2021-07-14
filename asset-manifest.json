@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/magic-8-ball/static/css/main.faf4babe.chunk.css",
+    "main.js": "/magic-8-ball/static/js/main.72c4ffa2.chunk.js",
+    "main.js.map": "/magic-8-ball/static/js/main.72c4ffa2.chunk.js.map",
+    "runtime-main.js": "/magic-8-ball/static/js/runtime-main.3591f471.js",
+    "runtime-main.js.map": "/magic-8-ball/static/js/runtime-main.3591f471.js.map",
+    "static/css/2.47e06e2e.chunk.css": "/magic-8-ball/static/css/2.47e06e2e.chunk.css",
+    "static/js/2.b1eb0706.chunk.js": "/magic-8-ball/static/js/2.b1eb0706.chunk.js",
+    "static/js/2.b1eb0706.chunk.js.map": "/magic-8-ball/static/js/2.b1eb0706.chunk.js.map",
+    "index.html": "/magic-8-ball/index.html",
+    "precache-manifest.78616d1b565e32a5b37e552b1d05b9fb.js": "/magic-8-ball/precache-manifest.78616d1b565e32a5b37e552b1d05b9fb.js",
+    "service-worker.js": "/magic-8-ball/service-worker.js",
+    "static/css/2.47e06e2e.chunk.css.map": "/magic-8-ball/static/css/2.47e06e2e.chunk.css.map",
+    "static/css/main.faf4babe.chunk.css.map": "/magic-8-ball/static/css/main.faf4babe.chunk.css.map",
+    "static/js/2.b1eb0706.chunk.js.LICENSE.txt": "/magic-8-ball/static/js/2.b1eb0706.chunk.js.LICENSE.txt",
+    "static/media/EightBall.png": "/magic-8-ball/static/media/EightBall.6cad85d6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3591f471.js",
+    "static/css/2.47e06e2e.chunk.css",
+    "static/js/2.b1eb0706.chunk.js",
+    "static/css/main.faf4babe.chunk.css",
+    "static/js/main.72c4ffa2.chunk.js"
+  ]
+}
