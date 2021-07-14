@@ -33,7 +33,7 @@ const App = () => {
   };
 
     return (
-      <div>
+      <div className='app' style={{height: `${window.innerHeight}px`}}>
         <Header />
         <Messages messages={messages} />
         <Form ask={ask} />

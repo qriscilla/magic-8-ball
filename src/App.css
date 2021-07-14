@@ -1,9 +1,9 @@
 /* Entire app */
 
-body {
+.app {
   background-image: linear-gradient(to bottom left, rgb(64, 80, 126), rgb(39, 49, 81));
   font-family: 'Mukta', sans-serif;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 
@@ -31,7 +31,7 @@ body {
 /* Messages */
 
 .messages {
-  height: calc(100vh - 120px);
+  /* height: calc(100vh - 120px); */
   overflow-y: scroll;
 }
 

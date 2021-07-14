@@ -13,7 +13,7 @@ const Messages = ({ messages }) => {
     }, [messages]);
 
     return (
-        <div className='messages'>
+        <div className='messages' style={{height: `calc(${window.innerHeight}px - 120px)`}}>
             {messages.map(message => <Message key={message.id} message={message} />)}
             <div ref={bottomRef} />
         </div>
