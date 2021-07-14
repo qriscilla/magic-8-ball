@@ -1,95 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
-class Form extends React.Component {
-    state = {
-        ask: '',
-        answer: ''
-    }
+const Form = ({ ask }) => {
+    const questionRef = useRef(null);
 
-    typing = (e) => {
-        // picking up input value
-        this.setState({[e.target.name]: e.target.value});  
-        
-        // randomizing answer and updating answer state
-        const responses = [
-            "Don't count on it",
-            "My reply is no",
-            "My sources say no",
-            "Outlook not so good",
-            "Very doubtful",
-            "As I see it, yes",
-            "Most likely",
-            "Outlook good",
-            "Signs point to yes",
-            "Yes",
-            "It is certain",
-            "It is decidedly so",
-            "Without a doubt",
-            "Yes - definitely",
-            "You may rely on it",
-            "Reply hazy, try again",
-            "Ask again later",
-            "Better not tell you now",
-            "Cannot predict now",
-            "Concentrate and ask again"             
-        ]
-        const random = responses[Math.floor(Math.random()*responses.length)];
-        this.setState({answer:random});
-    }     
-
-    asked = (e) => {
+    const triggerAsk = e => {
         e.preventDefault();
+        ask(questionRef.current.value);
+    };
 
-        // updating ask state
-        this.setState({ask:''});
-
-        // pushing states to App.js
-        this.props.form(this.state.ask, this.state.answer);
-    }
-
-    render() {
-        const isEnabled = this.state.ask.length > 0;
-        return (
-            <form onSubmit={this.asked} style={{display:'flex'}}>
-                <input 
-                    name='ask' 
-                    type='text' 
-                    placeholder='Dear Magic 8 Ball,' 
-                    value={this.state.ask}
-                    onChange={this.typing}
-                    style={{flex:'10'}}
-                ></input>
-                <button
-                    type='submit'
-                    value='Submit'
-                    disabled={!isEnabled}
-                    style={{flex:'1'}}
-                    >Ask</button>                    
-            </form>
-            // <div className='container-fluid'>
-            //     <form onSubmit={this.asked}>
-            //         <div className='row'>
-            //             <div className='col-sm-11'>
-            //                 <input 
-            //                     name='ask' 
-            //                     type='text' 
-            //                     placeholder='Dear Magic 8 Ball,' 
-            //                     value={this.state.ask}
-            //                     onChange={this.typing}
-            //                 ></input>
-            //             </div>
-            //             <div className='col-sm-1'>
-            //                 <button
-            //                     type='submit'
-            //                     value='Submit'
-            //                     disabled={!isEnabled}
-            //                 >Ask</button>                    
-            //             </div>                            
-            //         </div>
-            //     </form>
-            // </div>                  
-        );
-    }
-}
+    return (
+        <form className='form' onSubmit={triggerAsk}>
+            <input ref={questionRef} placeholder='Dear magic 8 ball . . .' />
+            <button type='submit'>ask</button>
+        </form>
+    );
+};
 
 export default Form;

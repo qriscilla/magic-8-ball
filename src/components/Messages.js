@@ -1,17 +1,23 @@
-import React, {Component} from 'react';
+import React, { useRef, useEffect } from 'react';
+
 import Message from './Message';
-import PropTypes from 'prop-types';
 
-class Messages extends Component {
-    render() {
-        return this.props.messages.map((message) => (
-            <Message key={message.id} message={message} />
-        ));
-    }
-}
+const Messages = ({ messages }) => {
+    const bottomRef = useRef(null);
 
-Messages.propTypes = {
-    messages: PropTypes.array.isRequired
-}
+    const scrollToBottom = () => 
+        bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+
+    return (
+        <div className='messages'>
+            {messages.map(message => <Message key={message.id} message={message} />)}
+            <div ref={bottomRef} />
+        </div>
+    );
+};
 
 export default Messages;
